@@ -1,5 +1,19 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+    const visitedNumbers = new Set();
+
+  for (let i = 0; i < array.length; i++) {
+    const currentNumber = array[i];
+    const complement = target - currentNumber;
+
+    if (visitedNumbers.has(complement)) {
+      return true;
+    }
+
+    visitedNumbers.add(currentNumber);
+  }
+
+  return false;
 }
 
 /* 
